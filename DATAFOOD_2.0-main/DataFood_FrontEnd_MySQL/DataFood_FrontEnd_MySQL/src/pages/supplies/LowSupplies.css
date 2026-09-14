@@ -1,0 +1,116 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ib-page {
+    min-height: 100vh;
+    background: #fde8d0;
+    padding: 2rem 2.5rem;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Header ── */
+.ib-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ib-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.ib-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 3px;
+    display: block;
+}
+
+/* ── Tabla ── */
+.ib-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.ib-table thead tr {
+    background: #f97316;
+    color: #fff;
+}
+
+.ib-table th,
+.ib-table td {
+    padding: 0.85rem 1.1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #fde8d0;
+}
+
+.ib-table tbody tr {
+    background: #fff8f2;
+}
+
+.ib-table tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+.ib-table tbody tr:hover {
+    background: #fff3e0;
+}
+
+/* Cantidad actual — resaltada en rojo */
+.ib-qty-low {
+    display: inline-block;
+    background: #fee2e2;
+    color: #dc2626;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+}
+
+/* Sin resultados */
+.ib-empty {
+    text-align: center;
+    padding: 2.5rem;
+    color: #22c55e;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Loading */
+.ib-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    font-size: 1rem;
+}
+
+/* ── Footer ── */
+.ib-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ib-btn-regresar {
+    background: #20b2aa;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ib-btn-regresar:hover {
+    background: #178f89;
+}

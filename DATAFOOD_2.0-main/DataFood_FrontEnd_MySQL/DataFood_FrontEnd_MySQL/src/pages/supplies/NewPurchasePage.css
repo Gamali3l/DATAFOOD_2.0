@@ -1,0 +1,131 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ncp-page {
+    min-height: 100vh;
+    background: #fde8d0;
+    padding: 1.5rem 2rem;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.ncp-title { font-size: 1.4rem; font-weight: 700; color: #333; }
+
+.ncp-header-form {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    background: #fff; border-radius: 10px;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+.ncp-field { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 160px; }
+.ncp-field label { font-size: 0.8rem; font-weight: 600; color: #555; }
+.ncp-field input,
+.ncp-field select {
+    padding: 0.45rem 0.7rem; border-radius: 7px;
+    border: 1px solid #ccc; font-size: 0.88rem;
+}
+
+.ncp-actions-row {
+    display: flex; gap: 0.8rem;
+}
+
+/* Base del botón */
+.btn-action {
+    background: #3bb8b0; color: #fff;
+    border: none; border-radius: 10px;
+    padding: 0.55rem 1.6rem;
+    font-size: 0.9rem; font-weight: 700; cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-action:hover    { background: #20b2aa; }
+.btn-action.active   { background: #1a8f89; }
+.btn-action:disabled { background: #aaa; cursor: default; }
+
+/* Editar y Eliminar — más anchos y con padding generoso */
+.btn-action--wide {
+    padding: 0.55rem 2.6rem;
+    min-width: 130px;
+}
+
+.ncp-body {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 1.2rem;
+    flex: 1;
+}
+
+.ncp-left { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.ncp-item-form {
+    background: #fff; border-radius: 10px;
+    padding: 0.8rem 1rem;
+    display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: flex-end;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.ncp-item-field { display: flex; flex-direction: column; gap: 0.3rem; min-width: 130px; }
+.ncp-item-field label { font-size: 0.8rem; font-weight: 600; color: #555; }
+.ncp-item-field input,
+.ncp-item-field select {
+    padding: 0.4rem 0.6rem; border-radius: 7px;
+    border: 1px solid #ccc; font-size: 0.87rem;
+}
+.ncp-autocomplete {
+    display: flex; gap: 1rem; font-size: 0.82rem;
+    background: #eef9f9; padding: 0.3rem 0.6rem;
+    border-radius: 6px; color: #2d4a45; align-self: flex-end;
+}
+.btn-add-item {
+    background: #f97316; color: #fff;
+    border: none; border-radius: 8px;
+    padding: 0.5rem 1rem; font-weight: 700;
+    cursor: pointer; align-self: flex-end;
+}
+.btn-add-item:hover { background: #e06010; }
+
+.ncp-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
+.ncp-table thead tr { background: #f97316; color: #fff; }
+.ncp-table th, .ncp-table td {
+    padding: 0.5rem 0.7rem; border-bottom: 1px solid #f0ddd0;
+}
+.ncp-table .row-selected-ncp td { background: #fff3e0; }
+.ncp-empty { text-align: center; color: #aaa; padding: 1.5rem; }
+
+.ncp-summary {
+    background: #fff; border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex; flex-direction: column; gap: 0.6rem;
+}
+.ncp-summary h4 { font-size: 1rem; font-weight: 700; }
+.ncp-summary-items { display: flex; flex-direction: column; gap: 0.4rem; }
+.ncp-summary-row {
+    display: flex; justify-content: space-between;
+    font-size: 0.87rem; color: #444;
+}
+.ncp-summary-totals { display: flex; flex-direction: column; gap: 0.3rem; }
+.ncp-total-row {
+    display: flex; justify-content: space-between;
+    font-size: 0.88rem;
+}
+.ncp-total-row.total-final {
+    background: #f97316; color: #fff;
+    border-radius: 6px; padding: 0.35rem 0.6rem;
+    font-weight: 700; font-size: 0.95rem;
+}
+
+.ncp-footer {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    padding-top: 0.5rem;
+}
+.ncp-count { font-weight: 700; font-size: 0.9rem; flex: 1; }
+.btn-regresar-ncp {
+    background: #3bb8b0; color: #fff;
+    border: none; border-radius: 8px;
+    padding: 0.5rem 1.4rem; font-weight: 700; cursor: pointer;
+}
+.btn-registrar-ncp {
+    background: #3bb8b0; color: #fff;
+    border: none; border-radius: 8px;
+    padding: 0.5rem 1.6rem; font-weight: 700; cursor: pointer;
+}
+.btn-registrar-ncp:hover, .btn-regresar-ncp:hover { background: #20b2aa; }

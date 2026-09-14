@@ -1,0 +1,323 @@
+/* ══════════════════════════════════════════════
+   REPORTES - Página hub
+   Paleta: naranja (#f97316) sobre fondo cálido
+══════════════════════════════════════════════ */
+
+.rep-page {
+    min-height: 100vh;
+    background: #fdf4ec;
+    padding: 24px 32px 48px;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+/* ── Botón regresar ── */
+.rep-back {
+    background: none;
+    border: none;
+    color: #f97316;
+    font-size: 0.9rem;
+    margin-top: 16px;
+    margin-left: 0;
+    align-self: flex-start;
+    cursor: pointer;
+    padding: 6px 0;
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+.rep-back:hover { opacity: 0.7; }
+
+/* ── Encabezado ── */
+.rep-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+.rep-header-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+.rep-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e1e2e;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+.rep-subtitle {
+    font-size: 0.97rem;
+    color: #6b7280;
+    margin: 4px 0 0;
+}
+
+/* ── Filtros rápidos ── */
+.rep-filtros-bar {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #f0e8df;
+}
+.rep-filtros-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f97316;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.rep-filtros-icon { font-size: 1rem; }
+.rep-filtros-btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.rep-filtro-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #e5e7eb;
+    background: white;
+    color: #374151;
+    font-size: 0.87rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-weight: 500;
+}
+.rep-filtro-btn:hover {
+    border-color: #f97316;
+    color: #f97316;
+}
+.rep-filtro-btn.activo {
+    background: #f97316;
+    color: white;
+    border-color: #f97316;
+    box-shadow: 0 2px 8px rgba(249,115,22,0.35);
+}
+.rep-cal-icon { font-size: 0.85rem; }
+
+/* ── Tarjetas ── */
+.rep-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+@keyframes repCardIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.rep-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    border: 1px solid #f0e8df;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    animation: repCardIn 0.4s ease both;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.rep-card:hover {
+    box-shadow: 0 8px 28px rgba(249,115,22,0.12);
+    transform: translateY(-3px);
+}
+
+.rep-card-icono-wrap {
+    width: 80px;
+    height: 80px;
+    background: #fef3e8;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    flex-shrink: 0;
+}
+
+.rep-card-titulo {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #1e1e2e;
+    margin: 0;
+}
+
+.rep-card-desc {
+    font-size: 0.88rem;
+    color: #6b7280;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.rep-card-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: #fdf4ec;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.rep-card-bullets li {
+    font-size: 0.85rem;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+}
+.rep-check { font-size: 0.9rem; }
+
+.rep-card-btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 13px;
+    background: #f97316;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.15s;
+    letter-spacing: 0.2px;
+}
+.rep-card-btn:hover {
+    background: #ea6c0a;
+    transform: scale(1.02);
+}
+.rep-card-btn:active { transform: scale(0.98); }
+
+/* ── Actividad reciente ── */
+.rep-actividad {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+    border: 1px solid #f0e8df;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.rep-actividad-titulo {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: #f97316;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.rep-actividad-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.rep-act-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.rep-act-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+.rep-act-info { display: flex; flex-direction: column; gap: 2px; }
+.rep-act-label { font-size: 0.82rem; color: #6b7280; font-weight: 500; }
+.rep-act-valor { font-size: 1.15rem; font-weight: 700; }
+.rep-act-sub   { font-size: 0.78rem; color: #9ca3af; }
+
+/* ── Aviso informativo ── */
+.rep-aviso {
+    background: #eff6ff;
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid #bfdbfe;
+}
+.rep-aviso-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.rep-aviso p {
+    font-size: 0.87rem;
+    color: #374151;
+    line-height: 1.55;
+    margin: 0;
+}
+.rep-aviso strong { color: #1e40af; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .rep-tarjetas { grid-template-columns: 1fr; }
+    .rep-actividad-grid { grid-template-columns: 1fr 1fr; }
+    .rep-page { padding: 16px; }
+}
+/* ── Agregar en Reports.css ── */
+
+.rep-card-imagen {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+}
+
+.rep-actividad-cargando {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* profit*/
+.rep-profit-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #1a5276, #1abc9c);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(26, 188, 156, 0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    z-index: 10;
+}
+.rep-profit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5);
+}
+

@@ -1,0 +1,32 @@
+.screensaver-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: ss-fade 0.4s ease;
+}
+
+@keyframes ss-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.screensaver-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.screensaver-hint {
+    position: absolute;
+    bottom: 2rem;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 0.05em;
+}

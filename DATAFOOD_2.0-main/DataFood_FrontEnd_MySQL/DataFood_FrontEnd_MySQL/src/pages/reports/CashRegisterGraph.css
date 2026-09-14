@@ -1,0 +1,345 @@
+/* ══════════════════════════════════════════════
+   GRÁFICA DE CAJA — prefix: crg-
+   Diseño consistente con CashRegisterReport.css
+══════════════════════════════════════════════ */
+
+/* ── Page wrapper ── */
+.crg-page {
+    min-height: 100vh;
+    background: #fdf4ec;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Topbar ── */
+.crg-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 28px;
+    background: white;
+    border-bottom: 1px solid #f0e8df;
+}
+.crg-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.crg-title-block { display: flex; flex-direction: column; gap: 2px; }
+.crg-title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #111827;
+}
+.crg-subtitle {
+    margin: 0;
+    font-size: 0.84rem;
+    color: #6b7280;
+}
+
+/* ── Buttons — identical tokens to cr- ── */
+.crg-btn-back {
+    background: white;
+    border: 1.5px solid #e5e7eb;
+    color: #374151;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.18s, color 0.18s;
+    white-space: nowrap;
+}
+.crg-btn-back:hover { border-color: #f97316; color: #f97316; }
+
+.crg-btn-export {
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+    white-space: nowrap;
+}
+.crg-btn-export:hover { background: #ea6c0a; }
+
+/* ── Filter bar ── */
+.crg-filter-bar {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 14px 28px;
+    background: white;
+    border-bottom: 1px solid #f0e8df;
+}
+.crg-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.crg-filter-group label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #374151;
+}
+.crg-filter-group input[type="date"] {
+    padding: 7px 12px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #111827;
+    background: white;
+    transition: border-color 0.18s;
+}
+.crg-filter-group input[type="date"]:focus {
+    outline: none;
+    border-color: #f97316;
+}
+.crg-filter-meta {
+    margin-left: auto;
+    font-size: 12px;
+    color: #6b7280;
+    align-self: flex-end;
+    padding-bottom: 2px;
+}
+.crg-filter-meta strong { color: #111827; }
+
+.crg-btn-clear {
+    background: none;
+    border: 1.5px solid #fca5a5;
+    color: #dc2626;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background 0.15s;
+}
+.crg-btn-clear:hover { background: #fee2e2; }
+
+/* ── Dashboard body ── */
+.crg-body {
+    padding: 22px 28px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ── KPI chips row ── */
+.crg-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.crg-chip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid #f0e8df;
+    border-radius: 12px;
+    padding: 12px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    min-width: 160px;
+    flex: 1 1 160px;
+}
+.crg-chip-icon { font-size: 1.6rem; flex-shrink: 0; }
+.crg-chip-label {
+    font-size: 0.70rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 3px;
+}
+.crg-chip-value {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.1;
+}
+.crg-chip-value--teal   { color: #f97316; }
+.crg-chip-value--green  { color: #15803d; }
+.crg-chip-value--red    { color: #dc2626; }
+.crg-chip-value--orange { color: #f97316; }
+.crg-chip-value--gray   { color: #6b7280; }
+
+/* ── Grid layouts ── */
+.crg-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+.crg-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+}
+@media (max-width: 1100px) {
+    .crg-grid-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+    .crg-grid-2,
+    .crg-grid-3 { grid-template-columns: 1fr; }
+}
+
+/* ── Chart cards ── */
+.crg-card {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #f0e8df;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.crg-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0e8df;
+}
+.crg-card-title span:first-child { font-size: 1rem; }
+
+.crg-card-hint {
+    margin: 0;
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: -6px;
+}
+
+/* ── Chart canvas wrapper ── */
+.crg-canvas-wrap {
+    height: 240px;
+    position: relative;
+}
+.crg-canvas-wrap--sm { height: 210px; }
+
+/* ── Empty state inside chart ── */
+.crg-chart-empty {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 13px;
+    gap: 8px;
+}
+.crg-chart-empty span { font-size: 1.8rem; }
+
+/* ── Card control row (title + select) ── */
+.crg-card-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: -4px;
+}
+.crg-card-controls label {
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 600;
+}
+.crg-select {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 7px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #111827;
+    background: #fdf4ec;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.18s;
+}
+.crg-select:focus { border-color: #f97316; }
+
+/* ── Donut legend chips ── */
+.crg-donut-legend {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 11.5px;
+    padding-top: 4px;
+}
+.crg-donut-legend span { font-weight: 600; }
+
+/* ── Tables inside cards ── */
+.crg-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+.crg-table thead tr { background: #fdf4ec; }
+.crg-table th {
+    padding: 9px 12px;
+    text-align: left;
+    font-size: 0.70rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    border-bottom: 2px solid #f0e8df;
+}
+.crg-table th:not(:first-child) { text-align: right; }
+.crg-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #f9f0e8;
+    color: #374151;
+    vertical-align: middle;
+}
+.crg-table td:not(:first-child) { text-align: right; }
+.crg-table tbody tr:hover td { background: #fffbf5; }
+.crg-table tbody tr:last-child td { border-bottom: none; }
+.crg-table .crg-td-name { font-weight: 600; color: #111827; text-align: left !important; }
+.crg-table .crg-td-center { text-align: center !important; }
+.crg-table .crg-td-green  { color: #15803d; font-weight: 700; }
+.crg-table .crg-td-red    { color: #dc2626; font-weight: 700; }
+.crg-table .crg-td-orange { color: #f97316; font-weight: 700; }
+.crg-table .crg-td-teal   { color: #f97316; font-weight: 700; }
+
+/* ── Status badge (same tokens as cr-badge) ── */
+.crg-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+.crg-badge--closed  { background: #dcfce7; color: #15803d; }
+.crg-badge--open    { background: #fef9c3; color: #a16207; }
+
+/* ── Squared badge ── */
+.crg-squared {
+    font-weight: 700;
+    font-size: 12px;
+}
+.crg-squared--ok      { color: #15803d; }
+.crg-squared--partial { color: #d97706; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .crg-body        { padding: 16px 16px 40px; }
+    .crg-topbar,
+    .crg-filter-bar  { padding: 12px 16px; }
+    .crg-chip        { min-width: 140px; }
+    .crg-filter-meta { display: none; }
+}

@@ -1,0 +1,801 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.compras-page {
+    min-height: 100vh;
+    background: #f8efe3;
+    padding: 1.5rem 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ───────────────────────────── */
+/* HEADER */
+/* ───────────────────────────── */
+
+.compras-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.compras-h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+.compras-sub {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.btn-dashboard,
+.btn-nueva-compra {
+    background: #14b8a6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.btn-dashboard:hover,
+.btn-nueva-compra:hover {
+    background: #0f766e;
+}
+
+/* ───────────────────────────── */
+/* FILTROS */
+/* ───────────────────────────── */
+
+.compras-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    background: white;
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    border: 1px solid #f1d7b8;
+}
+
+.search-box-c {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0.55rem 0.9rem;
+    flex: 1;
+    min-width: 250px;
+    background: #fafafa;
+}
+
+.search-box-c input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+    background: transparent;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-group label {
+    font-size: 0.78rem;
+    color: #555;
+    font-weight: 700;
+}
+
+.filter-group input[type="date"],
+.filter-group select {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    background: #fafafa;
+}
+
+.btn-limpiar-c {
+    background: #d1d5db;
+    border: none;
+    border-radius: 10px;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-limpiar-c:hover {
+    background: #9ca3af;
+}
+
+/* ───────────────────────────── */
+/* LAYOUT */
+/* ───────────────────────────── */
+
+.compras-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.compras-left {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ───────────────────────────── */
+/* TABLA PRINCIPAL */
+/* ───────────────────────────── */
+
+.compras-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #f1d7b8;
+}
+
+.compras-table thead tr {
+    background: #f97316;
+    color: white;
+}
+
+.compras-table th,
+.compras-table td {
+    padding: 1rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #fde8d0;
+    text-align: left;
+}
+
+.compras-table tbody tr:hover {
+    background: #fff7ed;
+}
+
+.row-selected {
+    background: #ffedd5 !important;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* ───────────────────────────── */
+/* BADGES */
+/* ───────────────────────────── */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.badge-recibido {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge-anulado {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ───────────────────────────── */
+/* BOTONES ACCIONES */
+/* ───────────────────────────── */
+
+.compras-actions {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.btn-icon-c {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.15s;
+    color: #555;
+}
+
+.btn-ver:hover {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.btn-edit:hover {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.btn-cancel:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* ───────────────────────────── */
+/* PAGINACIÓN */
+/* ───────────────────────────── */
+
+.compras-footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.compras-count {
+    font-size: 0.82rem;
+    color: #777;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.pagination button {
+    border: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 0.84rem;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #f97316;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+}
+
+.pagination .pg-active {
+    background: #f97316;
+    color: white;
+    border-color: #f97316;
+    font-weight: 700;
+}
+
+/* ───────────────────────────── */
+/* PANEL DERECHO */
+/* ───────────────────────────── */
+
+.compras-detail {
+    width: 520px;
+    min-width: 420px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 16px;
+    padding: 1.3rem;
+    border: 1px solid #f1d7b8;
+    position: sticky;
+    top: 1rem;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #fed7aa;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.detail-title {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #222;
+}
+
+.detail-code {
+    color: #14b8a6;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+/* ───────────────────────────── */
+/* GRID INFO */
+/* ───────────────────────────── */
+
+.detail-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+}
+
+.dmeta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.dmeta-icon {
+    font-size: 1rem;
+}
+
+.dmeta-label {
+    display: block;
+    font-size: 0.72rem;
+    color: #777;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.dmeta-val {
+    font-size: 0.9rem;
+    color: #111;
+    font-weight: 600;
+}
+
+/* ───────────────────────────── */
+/* TABLA DETALLE */
+/* ───────────────────────────── */
+
+.detail-section-title {
+    font-weight: 800;
+    font-size: 0.92rem;
+    margin-bottom: 0.6rem;
+    margin-top: 1rem;
+}
+
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+}
+
+.detail-table thead tr {
+    background: #f97316;
+    color: white;
+}
+
+.detail-table th,
+.detail-table td {
+    padding: 0.55rem;
+    border-bottom: 1px solid #fde8d0;
+    text-align: left;
+}
+
+/* ───────────────────────────── */
+/* TOTALES */
+/* ───────────────────────────── */
+
+.detail-totals {
+    margin-top: 1rem;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background: white;
+    font-size: 0.9rem;
+}
+
+.total-final {
+    background: #f97316;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+/* ───────────────────────────── */
+/* BOTÓN DESCARGAR */
+/* ───────────────────────────── */
+
+.btn-download-invoice {
+    width: 100%;
+    margin-top: 1rem;
+    background: #14b8a6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-download-invoice:hover {
+    background: #0f766e;
+}
+
+/* ───────────────────────────── */
+/* MODAL DE DESCARGA */
+/* ───────────────────────────── */
+
+.dl-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+}
+
+.dl-modal {
+    background: white;
+    border-radius: 20px;
+    padding: 1.8rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: dl-pop 0.18s ease-out;
+}
+
+@keyframes dl-pop {
+    from { transform: scale(0.92); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+.dl-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.dl-modal-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #111;
+}
+
+.dl-modal-close {
+    background: #f3f4f6;
+    border: none;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dl-modal-close:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.dl-modal-sub {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 1.4rem;
+}
+
+.dl-modal-sub strong {
+    color: #f97316;
+}
+
+.dl-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.dl-option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 1.2rem 1rem;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.18s;
+    text-align: center;
+}
+
+.dl-option-btn:hover {
+    transform: translateY(-2px);
+}
+
+.dl-pdf {
+    background: #fff7ed;
+    border-color: #fed7aa;
+}
+
+.dl-pdf:hover {
+    background: #ffedd5;
+    border-color: #f97316;
+}
+
+.dl-xml {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.dl-xml:hover {
+    background: #dbeafe;
+    border-color: #3b82f6;
+}
+
+.dl-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.dl-opt-label {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #111;
+}
+
+.dl-opt-desc {
+    font-size: 0.74rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+/* ───────────────────────────── */
+/* HISTORIAL */
+/* ───────────────────────────── */
+
+.detail-changelog {
+    margin-top: 1rem;
+}
+
+.changelog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+}
+
+.changelog-table thead tr {
+    background: #1e293b;
+    color: white;
+}
+
+.changelog-table th,
+.changelog-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: left;
+}
+
+.cl-action-badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #0369a1;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.history-section {
+    margin-top: 2rem;
+    background: white;
+    border-radius: 16px;
+    padding: 1.3rem;
+    border: 1px solid #f1d7b8;
+}
+
+.history-title {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.history-table thead tr {
+    background: #f97316;
+    color: white;
+}
+
+.history-table th,
+.history-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #fde8d0;
+    text-align: left;
+}
+
+.history-table tbody tr:hover {
+    background: #fff7ed;
+}
+
+/* ── Historial filters ── */
+.history-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.history-header .history-title {
+    margin: 0;
+    margin-right: auto;
+}
+
+.history-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.history-count {
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+}
+
+/* ───────────────────────────── */
+/* MODAL BASE */
+/* ───────────────────────────── */
+
+.dl-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dl-modal {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    width: 420px;
+    max-width: 90vw;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dl-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dl-modal-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+}
+
+.dl-modal-close {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+
+.dl-modal-close:hover {
+    background: #f3f4f6;
+}
+
+.dl-modal-sub {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* ───────────────────────────── */
+/* BOTONES DEL MODAL DE CANCELACIÓN */
+/* ───────────────────────────── */
+
+.cancel-modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 4px;
+    flex-wrap: nowrap;
+}
+
+.btn-cancel-dismiss {
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: 1.5px solid #e5e7eb;
+    background: white;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+
+.btn-cancel-dismiss:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+/* ── CORREGIDO: width/height auto + white-space nowrap ── */
+.btn-cancel-confirm {
+    padding: 9px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #ef4444;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    white-space: nowrap;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-cancel-confirm:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+.btn-cancel-confirm:active {
+    transform: translateY(0);
+}

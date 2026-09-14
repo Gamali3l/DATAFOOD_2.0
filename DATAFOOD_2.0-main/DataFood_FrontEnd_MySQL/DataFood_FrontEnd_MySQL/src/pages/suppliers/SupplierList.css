@@ -1,0 +1,149 @@
+/* ── Page layout ── */
+.supplier-page {
+  background: #fdf6ee;
+  min-height: 100vh;
+  padding: 1.5rem 2rem;
+  font-family: sans-serif;
+}
+
+/* ── Header buttons ── */
+.supplier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.btn-back, .btn-add {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #4ec4c4;
+  color: white;
+  font-size: 0.95rem;
+}
+.btn-add { background: #4ec4c4; }
+.btn-back { background: #4ec4c4; }
+
+/* ── Filters row ── */
+.supplier-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  background: white;
+  gap: 0.5rem;
+  flex: 1;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  width: 100%;
+  background: transparent;
+}
+
+.btn-sort {
+  padding: 0.45rem 1.2rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filter-select {
+  padding: 0.45rem 0.8rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* ── Table ── */
+.supplier-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.supplier-table thead tr {
+  background: #f07c2a;
+  color: white;
+}
+
+.supplier-table th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.supplier-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3d5b8;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.supplier-table tr:last-child td { border-bottom: none; }
+.supplier-table tbody tr:hover { background: #fff7f0; }
+
+/* ── Toggle switch ── */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.toggle-switch input { display: none; }
+
+.slider {
+  width: 38px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.slider::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle-switch input:checked + .slider { background: #4ec4c4; }
+.toggle-switch input:checked + .slider::after { transform: translateX(18px); }
+
+.toggle-label { font-size: 0.85rem; color: #555; }
+
+/* ── Action buttons ── */
+.actions { display: flex; gap: 0.5rem; }
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+.btn-icon:hover { opacity: 0.7; }

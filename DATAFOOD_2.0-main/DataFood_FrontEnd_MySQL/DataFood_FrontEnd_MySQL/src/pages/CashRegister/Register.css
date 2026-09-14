@@ -1,0 +1,181 @@
+/* =========================================
+   Cajas.css - Estilos compartidos
+   ========================================= */
+.cajaModel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* ← Solo esto cambia */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.cajaModel-container {
+    background: #fdf6ee;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    width: 90%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    font-family: sans-serif;
+    color: #333;
+}
+
+/* Modal más ancho para Cierre y Movimientos */
+.cajaModel-container.large {
+    max-width: 750px;
+}
+
+/* Título superior (opcional) */
+.cajaModel-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f07c2a;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Grid layout para dividir en columnas */
+.caja-grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Tarjetas/Paneles internos */
+.caja-panel {
+    background: #fdf1e5;
+    border-radius: 8px;
+    border: 1px solid #f3d5b8;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-panel-header {
+    background: #f07c2a;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.caja-panel-header.light {
+    background: transparent;
+    color: #f07c2a;
+    text-align: left;
+    padding: 0.5rem 1rem 0;
+    border: none;
+}
+
+.caja-panel-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Inputs y Textareas */
+.caja-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.caja-input-group label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.caja-input {
+    padding: 0.6rem;
+    border: 1.5px solid #4ec4c4;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+}
+
+.caja-textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    background: white;
+    resize: vertical;
+    min-height: 60px;
+}
+
+/* Botones de acción inferiores */
+.caja-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.caja-btn {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.caja-btn:hover { opacity: 0.85; }
+.caja-btn.teal { background: #4ec4c4; }
+.caja-btn.orange { background: #f07c2a; }
+
+/* Especiales para Movimientos (Retiro/Depósito) */
+.mov-type-container {
+    display: flex;
+    gap: 0.5rem;
+}
+.mov-btn {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.mov-btn.retiro { color: #e74c3c; border-color: #fbd6d2; background: #fff5f4; }
+.mov-btn.retiro.active { border-color: #e74c3c; }
+.mov-btn.deposito { color: #2ecc71; border-color: #d5f5e3; background: #f4fbf7; }
+.mov-btn.deposito.active { border-color: #2ecc71; }
+
+/* Resumen final Movimiento / Cierre */
+.caja-resumen-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e8f8f8;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.caja-resumen-box.green { background: #d5f5e3; color: #1e8449; }
+.caja-resumen-box.red { background: #fadbd8; color: #c0392b; }
